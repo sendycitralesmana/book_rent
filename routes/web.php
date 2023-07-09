@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RentLogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -46,6 +48,15 @@ Route::group(['middleware' => 'auth'], function(){
 
     // Book
     Route::get('/books', [BookController::class, 'index']);
+
+    // Category
+    Route::get('/categories', [CategoryController::class, 'index']);
+
+    // User
+    Route::get('/users', [UserController::class, 'index']);
+    
+    // Rent Log
+    Route::get('/rent-logs', [RentLogController::class, 'index']);
 
 });
 
