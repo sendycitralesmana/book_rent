@@ -51,6 +51,13 @@ Route::group(['middleware' => 'auth'], function(){
 
     // Category
     Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/categories/show-deleted', [CategoryController::class, 'showDeleted']);
+    Route::get('/categories/add', [CategoryController::class, 'add']);
+    Route::post('/categories/create', [CategoryController::class, 'create']);
+    Route::get('/categories/{slug}/edit', [CategoryController::class, 'edit']);
+    Route::put('/categories/{slug}/update', [CategoryController::class, 'update']);
+    Route::get('/categories/{slug}/delete', [CategoryController::class, 'delete']);
+    Route::get('/categories/{slug}/restore', [CategoryController::class, 'restore']);
 
     // User
     Route::get('/users', [UserController::class, 'index']);

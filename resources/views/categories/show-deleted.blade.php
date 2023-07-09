@@ -28,10 +28,8 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Categories Data</h3>
+                <h3 class="card-title">Categories Deleted Data</h3>
                 <div class="card-tools">
-                    <a href="/categories/add" class="btn btn-primary">Add Data</a>
-                    <a href="/categories/show-deleted" class="btn btn-info">Show Deleted Data</a>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -59,9 +57,8 @@
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->name }}</td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/categories/{{ $data->slug }}/edit">Edit</a>
-                                <a class="btn btn-danger btn-sm" href="/categories/{{ $data->slug }}/delete"
-                                onClick="return confirm('Anda Yakin ?')">Delete</a>
+                                <a class="btn btn-warning btn-sm" href="/categories/{{ $data->slug }}/restore"
+                                    onClick="return confirm('Anda Yakin ?')">Restore</a>
                             </td>
                         </tr>
                         @endforeach

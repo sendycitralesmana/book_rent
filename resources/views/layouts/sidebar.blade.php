@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/categories" class="nav-link {{ request()->is('categories') ? 'active' : '' }}">
+                    <a href="/categories" class="nav-link {{ request()->is('categories', 'categories/add', 'categories/{slug}/edit', 'categories/show-deleted') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Categories</p>
                     </a>
