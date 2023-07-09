@@ -55,13 +55,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
-                            <a href="/register" class="btn btn-info btn-block" style="color: aliceblue">Register</a>
-                        </div>
                         <!-- /.col -->
-                        <div class="col-6">
+                        <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block" style="color: aliceblue">Sign
                                 In</button>
+                        </div>
+                        <div class="col-12 text-center">
+                            Don't have account? <a href="/register" class="">Register</a>
                         </div>
                         <!-- /.col -->
                     </div>

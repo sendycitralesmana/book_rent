@@ -43,4 +43,8 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    // protected $attributes = [
+    //     'role_id' => 2
+    // ];
 }

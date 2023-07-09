@@ -31,39 +31,52 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign up to start your session</p>
                 @if (Session::has('status'))
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-success" role="alert">
                     <button type="button" class="btn btn-success close" data-dismiss="alert" sty>&times;</button>
                     {{Session::get('message')}}
                 </div>
                 @endif
-                <form action="/registerProcess" method="POST">
+                <form action="/register-process" method="POST">
                     {{ csrf_field() }}
-                    <div class="input-group mb-3">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
+                    <div>
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="Username" value="{{ old('username') }}">
+                        @if($errors->has('username'))
+                            <span class="help-block" style="color: red">{{ $errors->first('username') }}</span>
+                        @endif
                     </div>
-                    <div class="input-group mb-3">
+                    <div>
+                        <label>Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
+                        @if($errors->has('password'))
+                            <span class="help-block" style="color: red">{{ $errors->first('password') }}</span>
+                        @endif
                     </div>
+                    <div>
+                        <label>Phone</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Phone" value="{{ old('phone') }}">
+                        @if($errors->has('phone'))
+                            <span class="help-block" style="color: red">{{ $errors->first('phone') }}</span>
+                        @endif
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <textarea name="address" class="form-control" value="{{ old('address') }}"></textarea>
+                        @if($errors->has('address'))
+                            <span class="help-block" style="color: red">{{ $errors->first('address') }}</span>
+                        @endif
+                    </div>
+                    <hr>
                     <div class="row">
-                        <div class="col-6">
-                            <a href="/login" class="btn btn-info btn-block" style="color: aliceblue">Login</a>
-                        </div>
                         <!-- /.col -->
-                        <div class="col-6">
+                        <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block" style="color: aliceblue">Sign
                                 Up</button>
                         </div>
                         <!-- /.col -->
+                        <div class="col-12 text-center">
+                            Have account? <a href="/login" class="">Login</a>
+                        </div>
                     </div>
                 </form>
                 <!-- /.login-card-body -->
