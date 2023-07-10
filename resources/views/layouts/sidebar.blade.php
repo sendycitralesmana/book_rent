@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/users" class="nav-link {{ request()->is('users') ? 'active' : '' }}">
+                    <a href="/users" class="nav-link {{ request()->is('users', 'users/add', 'users/{slug}/edit', 'users/registered-user', 'users/show-banned', 'users/{slug}/detail') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Users</p>
                     </a>

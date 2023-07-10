@@ -28,9 +28,9 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">User Data</h3>
+                <h3 class="card-title">Registered User</h3>
                 <div class="card-tools">
-                    <a href="/users/registered-user" class="btn btn-primary">New Registered User</a>
+                    <a href="/users" class="btn btn-primary">Approved User</a>
                     <a href="/users/show-banned" class="btn btn-info">Show Banned User</a>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">

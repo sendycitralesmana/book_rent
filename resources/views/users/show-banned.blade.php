@@ -31,7 +31,6 @@
                 <h3 class="card-title">User Data</h3>
                 <div class="card-tools">
                     <a href="/users/registered-user" class="btn btn-primary">New Registered User</a>
-                    <a href="/users/show-banned" class="btn btn-info">Show Banned User</a>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -68,8 +67,8 @@
                             </td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="/users/{{ $data->slug }}/detail">Detail</a>
-                                <a class="btn btn-danger btn-sm" href="/users/{{ $data->slug }}/banned"
-                                onClick="return confirm('Anda Yakin ?')">Banned</a>
+                                <a class="btn btn-warning btn-sm" href="/users/{{ $data->slug }}/restore"
+                                onClick="return confirm('Anda Yakin ?')">Restore</a>
                             </td>
                         </tr>
                         @endforeach

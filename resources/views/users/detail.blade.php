@@ -30,8 +30,9 @@
             <div class="card-header">
                 <h3 class="card-title">User Data</h3>
                 <div class="card-tools">
-                    <a href="/users/registered-user" class="btn btn-primary">New Registered User</a>
-                    <a href="/users/show-banned" class="btn btn-info">Show Banned User</a>
+                    @if ($user->status == "inactive")
+                        <a href="/users/{{ $user->slug }}/approve-user" class="btn btn-primary" onClick="return confirm('Anda Yakin ?')">Approve User</a>
+                    @endif
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -50,36 +51,36 @@
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
+                            <th>Role</th>
                             <th>Phone</th>
-                            <th>Option</th>
+                            <th>Address</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($user as $data)
                         <tr>
-                            <td>{{ $data->id }}</td>
-                            <td>{{ $data->username }}</td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->username }}</td>
+                            <td>{{ $user->role_id }}</td>
                             <td>
-                                @if ($data->phone)
-                                    {{ $data->phone }}
+                                @if ($user->phone)
+                                    {{ $user->phone }}
                                 @else
                                     -
                                 @endif
                             </td>
-                            <td>
-                                <a class="btn btn-info btn-sm" href="/users/{{ $data->slug }}/detail">Detail</a>
-                                <a class="btn btn-danger btn-sm" href="/users/{{ $data->slug }}/banned"
-                                onClick="return confirm('Anda Yakin ?')">Banned</a>
-                            </td>
+                            <td>{{ $user->address }}</td>
+                            <td>{{ $user->status }}</td>
                         </tr>
-                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
+                            <th>Role</th>
                             <th>Phone</th>
-                            <th>Option</th>
+                            <th>Address</th>
+                            <th>Status</th>
                         </tr>
                     </tfoot>
                 </table>

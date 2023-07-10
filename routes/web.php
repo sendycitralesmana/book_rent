@@ -68,6 +68,16 @@ Route::group(['middleware' => 'auth'], function(){
 
     // User
     Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/registered-user', [UserController::class, 'registeredUser']);
+    Route::get('/users/show-banned', [UserController::class, 'showBanned']);
+    Route::get('/users/{slug}/detail', [UserController::class, 'detail']);
+    Route::get('/users/{slug}/approve-user', [UserController::class, 'approveUser']);
+    Route::get('/users/add', [UserController::class, 'add']);
+    Route::post('/users/create', [UserController::class, 'create']);
+    Route::get('/users/{slug}/edit', [UserController::class, 'edit']);
+    Route::put('/users/{slug}/update', [UserController::class, 'update']);
+    Route::get('/users/{slug}/banned', [UserController::class, 'banned']);
+    Route::get('/users/{slug}/restore', [UserController::class, 'restore']);
     
     // Rent Log
     Route::get('/rent-logs', [RentLogController::class, 'index']);
