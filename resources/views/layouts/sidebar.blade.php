@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/books" class="nav-link {{ request()->is('books') ? 'active' : '' }}">
+                    <a href="/books" class="nav-link {{ request()->is('books', 'books/add', 'books/{slug}/edit') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Books</p>
                     </a>

@@ -31,7 +31,6 @@
                 <h3 class="card-title">Book Data</h3>
                 <div class="card-tools">
                     <a href="/books/add" class="btn btn-primary">Add Data</a>
-                    <a href="/books/show-deleted" class="btn btn-info">Show Deleted Data</a>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -71,9 +70,8 @@
                             </td>
                             <td>{{ $data->status }}</td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/books/{{ $data->slug }}/edit">Edit</a>
-                                <a class="btn btn-danger btn-sm" href="/books/{{ $data->slug }}/delete"
-                                onClick="return confirm('Anda Yakin ?')">Delete</a>
+                                <a class="btn btn-warning btn-sm" href="/books/{{ $data->slug }}/restore"
+                                onClick="return confirm('Anda Yakin ?')">Restore</a>
                             </td>
                         </tr>
                         @endforeach

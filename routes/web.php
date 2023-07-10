@@ -48,6 +48,13 @@ Route::group(['middleware' => 'auth'], function(){
 
     // Book
     Route::get('/books', [BookController::class, 'index']);
+    Route::get('/books/show-deleted', [BookController::class, 'showDeleted']);
+    Route::get('/books/add', [BookController::class, 'add']);
+    Route::post('/books/create', [BookController::class, 'create']);
+    Route::get('/books/{slug}/edit', [BookController::class, 'edit']);
+    Route::put('/books/{slug}/update', [BookController::class, 'update']);
+    Route::get('/books/{slug}/delete', [BookController::class, 'delete']);
+    Route::get('/books/{slug}/restore', [BookController::class, 'restore']);
 
     // Category
     Route::get('/categories', [CategoryController::class, 'index']);
