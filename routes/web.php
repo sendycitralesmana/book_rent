@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RentLogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
@@ -19,9 +20,9 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('auth');
 
 Route::get('/test', function () {
     return view('test');
@@ -45,6 +46,17 @@ Route::group(['middleware' => 'auth'], function(){
     
     // Auth
     Route::get('/logout', [AuthController::class, 'logout']);
+
+});
+
+// Public
+Route::get('/', [PublicController::class, 'index']);
+
+// Only admin
+Route::group(['middleware' => ['auth', 'only_admin']], function(){
+
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // Book
     Route::get('/books', [BookController::class, 'index']);
@@ -84,18 +96,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-// Only admin
-Route::group(['middleware' => ['auth', 'only_admin']], function(){
-
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-
-});
-
 // Only client
 Route::group(['middleware' => ['auth', 'only_client']], function(){
 
     // User
-    Route::get('/user/profile', [UserController::class, 'profile']);
+    Route::get('/users/profile', [UserController::class, 'profile']);
 
 });
