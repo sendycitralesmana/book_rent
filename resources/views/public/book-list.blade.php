@@ -25,6 +25,25 @@
     <!-- Main content -->
     <section class="content">
 
+        <form action="" method="GET" class="mb-2">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <select name="category" class="form-control">
+                        <option value="">Select Category</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="input-group mb-3">
+                        <input type="text" name="title" class="form-control" placeholder="Search title's book">
+                        <button type="submit" class="btn btn-info">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
         <!-- Default box -->
         <div class="">
             <div class="row">
