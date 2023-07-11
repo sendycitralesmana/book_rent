@@ -17,6 +17,7 @@ class DashboardController extends Controller
         $userCount = User::count();
         $rentLogCount = RentLog::count();
         $rentLog = RentLog::all();
+        $rent = RentLog::with(['user', 'book'])->get();
         
         return view('dashboards/index', [
             'bookCount' => $bookCount,
@@ -24,6 +25,7 @@ class DashboardController extends Controller
             'userCount' => $userCount,
             'rentLogCount' => $rentLogCount,
             'rentLog' => $rentLog,
+            'rent' => $rent,
         ]);
     }
 }

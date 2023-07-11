@@ -9,6 +9,7 @@ use App\Http\Controllers\RentLogController;
 use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BookReturnController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,10 @@ Route::group(['middleware' => ['auth', 'only_admin']], function(){
     // Book Rent
     Route::get('/book-rent', [BookRentController::class, 'index']);
     Route::post('/book-rent/create', [BookRentController::class, 'create']);
+
+    // Book Return
+    Route::get('/book-return', [BookReturnController::class, 'index']);
+    Route::post('/book-return/create', [BookReturnController::class, 'create']);
     
     // Rent Log
     Route::get('/rent-logs', [RentLogController::class, 'index']);

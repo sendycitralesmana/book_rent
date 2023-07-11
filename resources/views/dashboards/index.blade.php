@@ -85,48 +85,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Users</th>
-                            <th>Book Title</th>
-                            <th>Rent Date</th>
-                            <th>Return Date</th>
-                            <th>Actual Return Date</th>
-                            <th>Option</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($rentLog as $data)
-                        <tr>
-                            <td>{{ $data->id }}</td>
-                            <td>{{ $data->user_id }}</td>
-                            <td>{{ $data->book_id }}</td>
-                            <td>{{ $data->rent_date }}</td>
-                            <td>{{ $data->return_date }}</td>
-                            <td>{{ $data->actual_return_date }}</td>
-                            <td>
-                                    <a class="btn btn-info btn-sm" href="/students/{{ $data->id }}/detail">Detail</a>
-                                    <a class="btn btn-warning btn-sm" href="/students/{{ $data->id }}/edit">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="/students/{{ $data->id }}/delete"
-                                    onClick="return confirm('Anda Yakin ?')">Delete</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Users</th>
-                            <th>Book Title</th>
-                            <th>Rent Date</th>
-                            <th>Return Date</th>
-                            <th>Actual Return Date</th>
-                            <th>Option</th>
-                        </tr>
-                    </tfoot>
-                </table>
+              <x-rent-logs-table :rent='$rent' />
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

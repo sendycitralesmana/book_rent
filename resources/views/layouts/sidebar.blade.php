@@ -54,15 +54,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>Book List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/book-rent" class="nav-link {{ request()->is('book-rent') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>Book Rent</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                            <a href="/book-return" class="nav-link {{ request()->is('book-return') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>Book List</p>
+                                <p>Book Return</p>
                             </a>
                         </li>
                         <li class="nav-item">
