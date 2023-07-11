@@ -54,15 +54,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/rent-logs" class="nav-link {{ request()->is('rent-logs') ? 'active' : '' }}">
+                            <a href="/book-rent" class="nav-link {{ request()->is('book-rent') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>Rent Logs</p>
+                                <p>Book Rent</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>Book List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/rent-logs" class="nav-link {{ request()->is('rent-logs') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>Rent Logs</p>
                             </a>
                         </li>
                     @else

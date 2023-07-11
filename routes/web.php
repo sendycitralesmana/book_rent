@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RentLogController;
+use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 
@@ -90,6 +91,10 @@ Route::group(['middleware' => ['auth', 'only_admin']], function(){
     Route::put('/users/{slug}/update', [UserController::class, 'update']);
     Route::get('/users/{slug}/banned', [UserController::class, 'banned']);
     Route::get('/users/{slug}/restore', [UserController::class, 'restore']);
+
+    // Book Rent
+    Route::get('/book-rent', [BookRentController::class, 'index']);
+    Route::post('/book-rent/create', [BookRentController::class, 'create']);
     
     // Rent Log
     Route::get('/rent-logs', [RentLogController::class, 'index']);
