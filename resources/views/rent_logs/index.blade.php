@@ -28,7 +28,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Title</h3>
+                <h3 class="card-title">Rent Logs Data</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
@@ -37,7 +37,13 @@
                 </div>
             </div>
             <div class="card-body">
-
+                @if (Session::has('status'))
+                <div class="alert {{ session('status') }}" role="alert">
+                    <button type="button" class="btn {{ session('btn-class') }} close" data-dismiss="alert" sty>&times;</button>
+                    {{Session::get('message')}}
+                </div>
+                @endif
+                <x-rent-logs-table :rent='$rent' />
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

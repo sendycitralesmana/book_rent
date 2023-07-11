@@ -84,6 +84,36 @@
                         </tr>
                     </tfoot>
                 </table>
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Book Rent Data</h3>
+                <div class="card-tools">
+                    @if ($user->status == "inactive")
+                        <a href="/users/{{ $user->slug }}/approve-user" class="btn btn-primary" onClick="return confirm('Anda Yakin ?')">Approve User</a>
+                    @endif
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Session::has('status'))
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="btn btn-success close" data-dismiss="alert" sty>&times;</button>
+                    {{Session::get('message')}}
+                </div>
+                @endif
+                <x-rent-logs-table :rent='$rent' />
+                
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
